@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
+
     @GetMapping("/hello")
     @ResponseBody
     public String hello() {
@@ -23,5 +24,10 @@ public class HelloController {
     @ResponseBody
     public String sayHello(@PathVariable String name){
         return "Hello, " + name + "!";
+    }
+
+    @GetMapping("/home")
+    public String welcome(){
+        return "home";
     }
 }
