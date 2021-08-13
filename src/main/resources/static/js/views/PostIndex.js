@@ -1,4 +1,5 @@
 import fetchData from "../fetchData.js";
+import createView from "../createView.js";
 
 export default function PostIndex(props) {
     return `
@@ -26,6 +27,7 @@ export default function PostIndex(props) {
                         <h3>${post.title}</h3>
                         <h2>${post.content}</h2>
                         <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
+                        <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>
        <!--add edit, delete buttons, add edit form-->
         
         
@@ -45,6 +47,9 @@ export default function PostIndex(props) {
 export function PostsEvent() {
     createPostEvent()
     editPostEvent()
+    //call function for edit btns listener
+    //call function for delete btns listener
+
 }
 
 
@@ -67,6 +72,8 @@ function createPostEvent() {
                 post: '/api/posts'
             },
             request)
+
+        fetch("http://localhost:8080/api/posts", request).then(createView("/posts"));
 
     })
 }
@@ -91,7 +98,13 @@ function editPostEvent() {
             },
             request)
 
+    }).catch(error =>{
+        console.log(error);
+        createView("/posts");
     });
 
 
+    function editEvent() {
+
+    }
 }
