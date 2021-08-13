@@ -40,7 +40,15 @@ export default function PostIndex(props) {
 //call function for edit btns listener
 //call function for data
 //call function for fetch
+
+
 export function PostsEvent() {
+    createPostEvent()
+    editPostEvent()
+}
+
+
+function createPostEvent() {
     $('#create-post-btn').click(function () {
 
         let post = {
@@ -60,59 +68,30 @@ export function PostsEvent() {
             },
             request)
 
+    })
+}
+
+function editPostEvent() {
+    $('#post-edit-btn').click(function () {
+
+        let post = {
+            title: $("#title").val(),
+            content: $("#content").val()
+        }
+        console.log(post)
+
+
+        let request = {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(post)
+        }
+        fetchData({
+                post: `/api/posts/${this.attr('data-id')}`
+            },
+            request)
+
     });
-
-    export function PostsEvent(){
-        createPostEvent()
-        editPostEvent()
-    }
-
-
-    function createPostEvent(){
-        $('#create-post-btn').click(function () {
-
-            let post = {
-                title: $("#title").val(),
-                content: $("#content").val()
-            }
-            console.log(post)
-
-
-            let request = {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(post)
-            }
-            fetchData({
-                    post: '/api/posts'
-                },
-                request)
-
-        })
-    }
-
-    function editPostEvent() {
-        $('#post-edit-btn').click(function () {
-
-            let post = {
-                title: $("#title").val(),
-                content: $("#content").val()
-            }
-            console.log(post)
-
-
-            let request = {
-                method: 'PUT',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(post)
-            }
-            fetchData({
-                    post: '/api/posts/${this.attr(data-id)}'
-                },
-                request)
-
-        })
-    }
 
 
 }
