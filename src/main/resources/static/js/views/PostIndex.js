@@ -103,8 +103,45 @@ function editPostEvent() {
         createView("/posts");
     });
 
+export function PostsEvent() {
+    //TODO: 1 - call createPostEvent
+    createEvent();
+    editEvent();
+}
+
+function createEvent() {
+    $('#create-post-btn').click(function () {
+
+        let post = {
+            title: $("#title").val(),
+            content: $("#content").val()
+        }
+        console.log(post)
+
+
+        let request = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(post)
+        }
+        fetchData({
+                post: '/api/posts'
+            },
+            request)
+
+        fetch("http://localhost:8080/api/posts", request).then(createView("/posts"));
+
+    })
+}
+
+
 
     function editEvent() {
+     $('.edit-post-btn').click(function () {
 
+         console.log("edit event fired off");
+         $(this).siblings(".edit-title .edit-content").attr("contenteditable", true);
+         $(this).text("Save");
+     });
     }
 }
