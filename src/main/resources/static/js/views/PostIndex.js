@@ -9,15 +9,15 @@ export default function PostIndex(props) {
 <!--MAKE CREATE FORM HERE--> 
        <form>
 
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text">
+    <label for="title">Title</label>
+    <input id="title" name="title" type="text">
     <br>
 
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password">
+    <label for="content">content</label>
+    <input id="content" name="content" type="content">
     <br>
 
-    <input type="button" id="create-post-btn">
+    <input type="button" id="create-post-btn" value="Add Post">
 </form>
             
             <div class="post-container">
