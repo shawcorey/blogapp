@@ -50,11 +50,12 @@ public class PostsController {
     @PutMapping("/{id}")
     private void updatePost(@PathVariable Long id, @RequestBody Post post){
         System.out.println(id);
-        System.out.println(post);
+        System.out.println(post.getTitle());
+        System.out.println(post.getContent());
     }
     @DeleteMapping({"/{id}"})
     private void deletePost(@PathVariable Long id){
-        System.out.println(id);
+        System.out.println("Deleting Post with ID: " + id);
     }
 
 
