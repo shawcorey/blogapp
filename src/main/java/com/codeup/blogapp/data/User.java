@@ -8,17 +8,17 @@ public class User {
     private String email;
     private String password;
 //    private Date createdAt;
-    private Role role;
+    private Role role = Role.USER;
 //POJO
     public enum Role {USER, ADMIN}
 
-    public User(long id, String username, String email, String password, Role role) {
+    public User(long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
 //        this.createdAt = createdAt;
-        this.role = role;
+
     }
 //Getters and Setters
     public long getId() {

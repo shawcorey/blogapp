@@ -11,7 +11,7 @@ import java.util.List;
 public class UsersController {
 private List<User> getUser(){
     return new ArrayList<>(){{
-        add(new User(1l,"User", "new.email@gmail.com", "1234qwerty", User.Role.USER));
+        add(new User(1l,"User", "new.email@gmail.com", "1234qwerty"));
     }};
 
 
@@ -23,7 +23,7 @@ private List<User> getUser(){
       if (id == 1){
 
           return new User(1L,"User","email@email.com",
-                  "qwasdf1234", User.Role.USER);
+                  "qwasdf1234");
       }else {
           return null;
       }

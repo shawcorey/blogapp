@@ -26,6 +26,8 @@ export default function Register(props) {
 
 }
 
+
+
 const routes = {
     // ...additional routes
 
@@ -35,7 +37,11 @@ const routes = {
         uri: '/register',
         title: "Register",
         viewEvent : RegisterEvent
-    }
+    },
 
     // additional routes...
+
+}
+function submitForm() {
+  $(this).click(submitForm())
 }
