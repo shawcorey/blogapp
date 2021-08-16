@@ -21,4 +21,21 @@ export default function Register(props) {
 </body>
 </html>`;
 
+
+
+
+}
+
+const routes = {
+    // ...additional routes
+
+    '/register': {
+        returnView: Register,
+        state: {},
+        uri: '/register',
+        title: "Register",
+        viewEvent : RegisterEvent
+    }
+
+    // additional routes...
 }
