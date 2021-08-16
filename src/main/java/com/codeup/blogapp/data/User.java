@@ -7,17 +7,17 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private Date createdAt;
+//    private Date createdAt;
     private Role role;
 //POJO
     public enum Role {USER, ADMIN}
 
-    public User(long id, String username, String email, String password, Date createdAt, Role role) {
+    public User(long id, String username, String email, String password, Role role) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-        this.createdAt = createdAt;
+//        this.createdAt = createdAt;
         this.role = role;
     }
 //Getters and Setters
@@ -53,13 +53,13 @@ public class User {
         this.password = password;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+//    public Date getCreatedAt() {
+//        return createdAt;
+//    }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+//    public void setCreatedAt(Date createdAt) {
+////        this.createdAt = createdAt;
+//    }
 
     public Role getRole() {
         return role;
