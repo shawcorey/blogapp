@@ -1,5 +1,6 @@
 package com.codeup.blogapp.data;
 
+import java.util.Collection;
 import java.util.Date;
 //Create the fields
 public class User {
@@ -9,18 +10,45 @@ public class User {
     private String password;
 //    private Date createdAt;
     private Role role = Role.USER;
-//POJO
-    public enum Role {USER, ADMIN}
+    private Collection<Post> posts;
 
     public User(long id, String username, String email, String password) {
+
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+
+    }
+
+    //POJO
+    public enum Role {USER, ADMIN}
+
+    public User (String username){
+        this.username = username;
+    }
+    public User(long id, String username, String email, String password, Collection<Post> posts) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.posts = posts;
 //        this.createdAt = createdAt;
 
     }
+
+
 //Getters and Setters
+
+
+    public Collection<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Collection<Post> posts) {
+        this.posts = posts;
+    }
+
     public long getId() {
         return id;
     }

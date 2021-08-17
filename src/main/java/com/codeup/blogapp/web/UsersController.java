@@ -1,5 +1,6 @@
 package com.codeup.blogapp.web;
 
+import com.codeup.blogapp.data.Post;
 import com.codeup.blogapp.data.User;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +13,26 @@ import java.util.List;
 @RequestMapping(value = "/api/users")
 public class UsersController {
     private List<User> getUser() {
+        List<Post> posts = new ArrayList<>();
+        posts.add(new Post("title", "content"));
+
+
         return new ArrayList<>() {{
-            add(new User(1l, "User", "new.email@gmail.com", "1234qwerty"));
+            add(new User(1l, "User", "new.email@gmail.com", "1234qwerty", posts));
+
         }};
 
 
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     private User getUserById(@PathVariable Long id) {
-
+        List<Post> posts = new ArrayList<>();
+        posts.add(new Post("title", "content"));
         if (id == 1) {
 
             return new User(1L, "User", "email@email.com",
-                    "qwasdf1234");
+                    "qwasdf1234", posts);
         } else {
             return null;
         }
@@ -51,20 +58,22 @@ public class UsersController {
         System.out.println("Deleting User with ID: " + id);
     }
 
-    @GetMapping("{id}")
-    private User findByID(@PathVariable Long id) {
+//    @GetMapping("/{id}")
+//    private User findByID(@PathVariable Long id) {
+//        return new User(1L, "User", "email@email.com", "password");
+//
+//    }
+
+    @GetMapping("/findByUsername/{username}")
+    private User findByUsername(@PathVariable String username) {
+
         return new User(1L, "User", "email@email.com", "password");
-        }
     }
 
-    @GetMapping("/findByUsername")
-    private void findByUsername(@RequestParam String username) {
-        return new User;
-    }
+    @GetMapping("/findByEmail")
+    private User findByEmail(@RequestParam String email) {
 
-    @GetMapping("findByEmail")
-    private void findByEmail(@RequestParam String email) {
-        return new User;
+        return new User(1L, "User", "email@email.com", "password");
     }
 
 
