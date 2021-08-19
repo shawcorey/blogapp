@@ -5,6 +5,8 @@ public class Category {
     private String name;
     private Post post;
 
+    public Category() {
+    }
 
     public Category(Long id, String name, Post post) {
         this.id = id;
