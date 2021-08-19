@@ -13,9 +13,12 @@ export default function PostIndex(props) {
                     <label for="title">Title</label>
                     <input id="title" name="title" type="text">
                     <br>
-
                     <label for="content">content</label>
-                    <input id="content" name="content" type="content">
+                    <input id="content" name="content" type="content">      
+                    <select>
+                    <option value="">-- Select a Category --</option>
+                    ${props.categories.map(category => `<option>${category.name}</option>`)}
+                    </select>
                     <br>
 
                     <input type="button" id="create-post-btn" value="Add Post">
