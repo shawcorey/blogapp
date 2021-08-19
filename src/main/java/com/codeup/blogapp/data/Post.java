@@ -1,19 +1,23 @@
 package com.codeup.blogapp.data;
 
+import java.util.Collection;
+
 public class Post {
     //Fields go inside
     private Long id;
     private String title;
     private String content;
     private User user;
+    private Collection<Category> categories;
     private Category category;
     //empty Constructor window key/command + n. select constructor.
-    public Post(Long id, String title, String content, User user) {
+    public Post(Long id, String title, String content, User user, Collection<Category> categories) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.user = user;
-        this.category = category;
+        this.categories = categories;
+
     }
     public Post(String title, String content){
         this.title = title;

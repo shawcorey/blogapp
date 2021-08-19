@@ -32,11 +32,42 @@ export default function PostIndex(props) {
                  
                     `).join('')}
                 </div>
-
+            <div>
+            ${getPostsComponent(props.post)}
+            </div>
 
             </main>
     `;
+
+    function getCategoriesComponent(categories) {
+
+        return categories.map(category =>{
+            `
+            <div class="post">
+                        <h3 class="post-title">${post.title}</h3>
+                        <h2 class="post-content">${post.content}</h2>
+                        <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
+                        <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>
+                    </div>
+                 
+            `
+        })
+    }
 }
+
+function getPostsComponent(posts) {
+
+    return props.posts.map(post =>
+        `<div class="post">
+                        <h3 class="post-title">${post.title}</h3>
+                        <h2 class="post-content">${post.content}</h2>
+                        <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
+                        <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>
+                    </div>
+                 
+                    `).join('')}
+
+
 
 
 export function PostsEvent() {
