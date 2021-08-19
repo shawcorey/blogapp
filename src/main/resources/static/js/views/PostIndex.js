@@ -38,9 +38,7 @@ export default function PostIndex(props) {
                  
                     `).join('')}
                 </div>
-            <div>
-            ${getPostsComponent(props.post)}
-            </div>
+           
 
             </main>
     `;
@@ -48,7 +46,7 @@ export default function PostIndex(props) {
     function getCategoriesComponent(categories) {
        console.log(categories);
         return categories.map((category) => {
-            `
+            return `
              <span>#${category.name}</span>    
             `
         }).join('');
