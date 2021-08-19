@@ -27,6 +27,14 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
 }
 
 
