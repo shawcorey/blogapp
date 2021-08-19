@@ -9,7 +9,7 @@ public class Post {
     private String content;
     private User user;
     private Collection<Category> categories;
-    private Category category;
+
     //empty Constructor window key/command + n. select constructor.
     public Post(Long id, String title, String content, User user, Collection<Category> categories) {
         this.id = id;
@@ -57,11 +57,11 @@ public class Post {
         this.content = content;
     }
 
-    public Category getCategory() {
-        return category;
+    public Collection<Category> getCategory() {
+        return categories;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategory(Collection<Category> categories) {
+        this.categories = categories;
     }
 }

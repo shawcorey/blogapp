@@ -3,15 +3,15 @@ package com.codeup.blogapp.data;
 public class Category {
     private Long id;
     private String name;
-    private Post post;
+
 
     public Category() {
     }
 
-    public Category(Long id, String name, Post post) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.post = post;
+
     }
 
     public Long getId() {
@@ -30,13 +30,7 @@ public class Category {
         this.name = name;
     }
 
-    public Post getPost() {
-        return post;
-    }
 
-    public void setPost(Post post) {
-        this.post = post;
-    }
 }
 
 
