@@ -1,9 +1,13 @@
 package com.codeup.blogapp.data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Collection;
 import java.util.Date;
 //Create the fields
+@Entity
 public class User {
+    @Id
     private long id;
     private String username;
     private String email;
@@ -18,6 +22,10 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+
+    }
+
+    public User() {
 
     }
 

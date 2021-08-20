@@ -1,13 +1,25 @@
 package com.codeup.blogapp.data;
 
+import javax.persistence.*;
 import java.util.Collection;
-
+@Entity
+@Table(name = "posts")
 public class Post {
     //Fields go inside
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 120)//This is making the columns in the DB
     private String title;
+
+    @Column(nullable = false)
     private String content;
+
     private User user;
+
+
+
     private Collection<Category> categories;
 
     //empty Constructor window key/command + n. select constructor.
@@ -22,6 +34,10 @@ public class Post {
     public Post(String title, String content){
         this.title = title;
         this.content = content;
+    }
+
+    public Post() {
+
     }
     //Getters and Setters
 
