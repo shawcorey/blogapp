@@ -1,18 +1,25 @@
 package com.codeup.blogapp.data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 //Create the fields
 @Entity
 public class User {
     @Id
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 120)
     private String username;
+
+    @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
-//    private Date createdAt;
+
+    //    private Date createdAt;
     private Role role = Role.USER;
     private Collection<Post> posts;
 
@@ -57,7 +64,7 @@ public class User {
         this.posts = posts;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
