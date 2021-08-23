@@ -26,12 +26,14 @@ export default function PostIndex(props) {
 
                 <div class="post-container">
                     ${props.posts.map(post =>
+
         `<div class="post">
                         <h3 class="post-title">${post.title}</h3>
                         <h2 class="post-content">${post.content}</h2>
                         <div class="categories">
                         <span class="username">Posted by: ${post.user.username}</span>
-                        ${getCategoriesComponent(post.categories)}
+                         
+                        ${getCategoriesComponent(post.category)}
                         </div>
                         <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
                         <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>
@@ -45,23 +47,24 @@ export default function PostIndex(props) {
 
             </main>
     `;
-
+}
     function getCategoriesComponent(categories) {
        console.log(categories);
-        return categories.map((category) => {
-            return `
+        return categories.map(category =>
+             `
              <span>#${category.name}</span>    
             `
-        }).join('');
+        ).join("");
     }
-}
+
 
 function getPostsComponent(posts) {
 
-    return props.posts.map(post =>
+    return posts.map(post =>
         `<div class="post">
                         <h3 class="post-title">${post.title}</h3>
                         <h2 class="post-content">${post.content}</h2>
+                        <div ${getCategoriesComponent(post.category)}></div>
                         <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
                         <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>
                     </div>
