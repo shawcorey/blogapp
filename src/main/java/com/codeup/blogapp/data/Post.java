@@ -2,6 +2,7 @@ package com.codeup.blogapp.data;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -21,8 +22,9 @@ public class Post {
     private String content;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonIgnoreProperties({"posts", "password"})
     private User user;
+
 
 
     @ManyToMany(

@@ -34,6 +34,7 @@ public class User {
     @JsonIgnoreProperties("user")
     private Collection<Post> posts;
 
+
     public User(long id, String username, String email, String password) {
 
         this.id = id;

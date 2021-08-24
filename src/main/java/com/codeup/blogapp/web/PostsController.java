@@ -18,11 +18,16 @@ import java.util.List;
 // we are informing Spring of how to direct requests to PostsController,
 // as well as what type of data is accepted.
 public class PostsController {
+
+
     private final PostsRepository postsRepository;
+
 
     public PostsController(PostsRepository postsRepository) {
         this.postsRepository = postsRepository;
     }
+
+
 
     @GetMapping
     //This handy annotation is what is called a composed annotation.
