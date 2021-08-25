@@ -33,7 +33,7 @@ export default function PostIndex(props) {
                         <div class="categories">
                         <span class="username">Posted by: ${post.user.username}</span>
                          
-                        ${getCategoriesComponent(post.category)}
+                        ${getCategoriesComponent(post.categories)}
                         </div>
                         <button class="post-edit-btn" type="button" data-id="${post.id}">EDIT</button>
                         <button class="post-delete-btn" type="button" data-id="${post.id}">DELETE</button>

@@ -14,13 +14,13 @@ public class EmailService {
     @Autowired
     public JavaMailSender emailSender;
 
-    @Value("${spring.mail.from}")
-    private String from;
+//    @Value("${spring.mail.from}")
+//    private String from;
 
     public void prepareAndSend(Post post, String subject, String body) {
         SimpleMailMessage msg = new SimpleMailMessage();
-        msg.setFrom(from);
-        msg.setTo(post.getUser().getEmail());
+        msg.setFrom("shaw.corey@gmail.com");
+        msg.setTo("shaw.corey@gmail.com");
         msg.setSubject(subject);
         msg.setText(body);
 
@@ -32,4 +32,5 @@ public class EmailService {
             System.err.println(ex.getMessage());
         }
     }
+
 }

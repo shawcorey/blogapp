@@ -53,6 +53,7 @@ public class PostsController {
         System.out.println(newPost.getTitle());
         System.out.println(newPost.getContent());
         postsRepository.save(newPost);
+        emailService.prepareAndSend(newPost,"Food","Meat");
     }
     @PutMapping("/{id}")
     private void updatePost(@PathVariable Long id, @RequestBody Post post){
