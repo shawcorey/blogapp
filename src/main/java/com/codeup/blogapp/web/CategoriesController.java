@@ -1,5 +1,6 @@
 package com.codeup.blogapp.web;
 
+import com.codeup.blogapp.data.CategoriesRepository;
 import com.codeup.blogapp.data.Category;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +11,9 @@ import java.util.List;
 @RequestMapping(value="/api/categories", headers = "Accept=application/json")
   public class CategoriesController<CategoryRepository> {
 
-     private final CategoryRepository categoryRepository;
+     private final CategoriesRepository categoryRepository;
 
-     public CategoriesController(CategoryRepository categoryRepository){
+     public CategoriesController(CategoriesRepository categoryRepository){
        this.categoryRepository = categoryRepository;
      }
 
@@ -28,7 +29,7 @@ import java.util.List;
   @GetMapping("/{id}")
   private Category getPostsByCategory(@PathVariable Long id){
 
-      return categoryRepository.getById(id);
+      return categoryRepository.findById(id).get();
   }
 
 }
