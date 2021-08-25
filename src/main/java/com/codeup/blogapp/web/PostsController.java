@@ -5,6 +5,7 @@ import com.codeup.blogapp.data.Category;
 import com.codeup.blogapp.data.Post;
 import com.codeup.blogapp.data.PostsRepository;
 import com.codeup.blogapp.data.User;
+import com.codeup.blogapp.services.EmailService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -21,10 +22,12 @@ public class PostsController {
 
 
     private final PostsRepository postsRepository;
+    private final EmailService emailService;
 
 
-    public PostsController(PostsRepository postsRepository) {
+    public PostsController(PostsRepository postsRepository, EmailService emailService) {
         this.postsRepository = postsRepository;
+        this.emailService = emailService;
     }
 
 
