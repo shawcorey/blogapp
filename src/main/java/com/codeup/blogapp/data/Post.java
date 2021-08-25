@@ -38,6 +38,7 @@ public class Post {
             foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
             inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT)
     )
+    @JsonIgnoreProperties("posts")
     private Collection<Category> categories;
 
     //empty Constructor window key/command + n. select constructor.

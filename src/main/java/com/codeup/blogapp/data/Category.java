@@ -1,5 +1,6 @@
 package com.codeup.blogapp.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Category {
             foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT),
             inverseForeignKey = @ForeignKey(ConstraintMode.CONSTRAINT)
     )
+    @JsonIgnoreProperties("categories")
     private Collection<Post> posts;
 
 
