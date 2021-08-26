@@ -1,13 +1,12 @@
 package com.codeup.blogapp.web;
 
-import com.codeup.blogapp.data.Post;
 import com.codeup.blogapp.data.User;
 import com.codeup.blogapp.data.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,9 +14,11 @@ import java.util.List;
 public class UsersController {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UsersController(UserRepository userRepository){
+    public UsersController(UserRepository userRepository, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
     @GetMapping()
     private List<User> UsersController(){
@@ -30,10 +31,10 @@ public class UsersController {
         return userRepository.findById(id).get();
     }
 
-    @PostMapping
-    private void createUser(@RequestBody User newUser) {
-
-        userRepository.save(newUser);
+    @PostMapping("/create")
+    private void createUser(@RequestBody User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
     }
 
     @PutMapping("/{id}")
