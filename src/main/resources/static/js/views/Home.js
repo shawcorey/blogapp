@@ -5,10 +5,12 @@ export default function Home(props) {
             <h1>Home Page</h1>
         </header>
         <main>
+        <div id="background">
             <div>
                 <p>
                     This is the home page text.
                 </p>    
+            </div>
             </div>
         </main>
     `;
