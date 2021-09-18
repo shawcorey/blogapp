@@ -1,6 +1,6 @@
 export default function Navbar(props) {
     return `
-        <nav>
+        <nav class="navbar navbar-dark bg-dark">
             <a href="/" data-link>Home</a>
             <a href="/posts" data-link>Posts</a>
             <a href="/about" data-link>About</a>

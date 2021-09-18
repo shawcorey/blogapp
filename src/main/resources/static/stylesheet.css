@@ -6,10 +6,10 @@ body{
     height: 800px;
     background-image: url("/img/pexels-wendy-wei-2753432.jpg");
 
-    /*background-size: cover;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    /*-webkit-box-shadow: 5px 5px 15px 5px #191414;*/
-    /*box-shadow: 5px 5px 15px 5px #191414;*/
+    -webkit-box-shadow: 5px 5px 15px 5px #191414;
+    box-shadow: 5px 5px 15px 5px #191414;
 }
