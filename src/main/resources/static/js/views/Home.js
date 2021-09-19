@@ -2,7 +2,7 @@ export default function Home(props) {
     console.log("The frontend did it. HER FAULT");
     return `
         <header>
-            <img id="welcomeImage" src="/static/img/Logo%20(1).png">
+            <img id="welcomeImage" src="/static/img/Logo%20(1).png" alt="logo">
         </header>
         <main>
         <div id="background">
