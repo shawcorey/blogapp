@@ -7,6 +7,7 @@ export default function Login(props) {
 </head>
 <body>
 <h1>Log In</h1>
+<img id="welcomeImage" src="/static/img/pexels-johannes-plenio-1103970.jpg" alt="logo">
 
 <form id="login-form">
     <label for="username">Username</label>
